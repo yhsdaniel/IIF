@@ -1,0 +1,202 @@
+$white: #fff;
+$red: #ef4444;
+$orange: #F58220;
+$light-gray: #e6e6e6;
+$gray: #617170;
+$disable-text: #617170;
+$font-primary: #001E1D;
+$font-secondary: #617170;
+// grid
+$pink: #FFDDFB;
+$light-blue: #C3EAFF;
+$light-orange: #F8DBCB;
+$beam: #B2F0F0;
+
+
+#root {
+    width: 100%;
+    height: 100%;
+}
+
+.App {
+    background: $white;
+    height: 100%;
+    width: 100%;
+}
+
+.home-container {
+    height: 100%;
+    width: 100%;
+}
+
+nav {
+    width: 100%;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 24px 24px 24px;
+    border-bottom: 1px solid $light-gray;
+    .logo {
+        width: 10%;
+        cursor: pointer;
+
+        img {
+            width: 100%;
+        }
+    }
+    .back-to-homepage{
+        width: 183px;
+        height: 48px;
+        border-radius: 8px;
+        border: 1.2px solid $orange;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 4px 16px;
+        gap: 8px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .flex-1 {
+        flex: 1;
+    }
+
+    .cart-container {
+        width: 5%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .circle-cart {
+            position: relative;
+            width: 1.25rem;
+            border-radius: 100%;
+            background: $red;
+            top: -0.625rem;
+            right: 0.625rem;
+        }
+
+        .number-of-cart {
+            position: absolute;
+            font-size: 14px;
+            text-align: center;
+            color: $white;
+            width: 100%;
+            top: 0;
+        }
+    }
+
+    .username-container {
+        width: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+
+        .username {
+            color: #001E1D;
+        }
+
+        .title-username {
+            color: $gray;
+            font-size: 12px;
+        }
+    }
+}
+
+
+//========================= Banner ============================
+.section-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin: 1rem 0;
+
+    a {
+        color: $disable-text;
+    }
+}
+
+.section-banner-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 3rem 0;
+
+    span {
+        font-size: 48px;
+        line-height: 60px;
+        text-align: center;
+        color: $font-primary;
+        font-weight: 700;
+    }
+    .secondary {
+        font-size: 18px;
+        font-weight: 400;
+        color: $font-secondary;
+        line-height: 60px;
+        text-align: center;
+    }
+}
+
+.section-grid {
+    margin: 5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+
+    .grid {
+        width: 306px;
+        height: 250px;
+        border-radius: 8px;
+        padding: 1rem;
+        display: flex;
+        cursor: pointer;
+        .title-grid {
+            width: 70%;
+            span {
+                font-size: 20px;
+                line-height: 24px;
+                color: $font-primary;
+                font-weight: 500;
+            }
+        }
+        .icon {
+            width: 30%;
+        }
+    }
+}
+
+.grid:nth-child(1) {
+    background: $pink;
+    background-image: url('/public/it-periperal.png');
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.grid:nth-child(2) {
+    background: $light-blue;
+    background-image: url('/public/printing.png');
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.grid:nth-child(3) {
+    background: $light-orange;
+    background-image: url('/public/pantry.png');
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.grid:nth-child(4) {
+    background: $beam;
+    background-image: url('/public/merchandise.png');
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
