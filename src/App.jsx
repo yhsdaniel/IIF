@@ -12,7 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path={`detail-product`} element={<DetailProduct />} />
-          <Route path='Cart' element={<ListCart />} />
+          {/* <Route path='Cart' element={<ListCart />} /> */}
           <Route path='it-periperal' element={<Periperal />} />
         </Routes>
       </Router>

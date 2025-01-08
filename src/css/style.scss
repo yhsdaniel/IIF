@@ -1,16 +1,4 @@
-$white: #fff;
-$red: #ef4444;
-$orange: #F58220;
-$light-gray: #e6e6e6;
-$gray: #617170;
-$disable-text: #617170;
-$font-primary: #001E1D;
-$font-secondary: #617170;
-// grid
-$pink: #FFDDFB;
-$light-blue: #C3EAFF;
-$light-orange: #F8DBCB;
-$beam: #B2F0F0;
+@import './variable';
 
 
 #root {
@@ -30,7 +18,6 @@ $beam: #B2F0F0;
 }
 
 nav {
-    width: 100%;
     height: 72px;
     display: flex;
     align-items: center;
@@ -69,23 +56,35 @@ nav {
         display: flex;
         justify-content: center;
         align-items: center;
-        .circle-cart {
-            position: relative;
-            width: 1.25rem;
-            border-radius: 100%;
-            background: $red;
-            top: -0.625rem;
-            right: 0.625rem;
+
+        .cart-icon {
+            width: 2rem;
+            height: 1.2rem;
         }
 
-        .number-of-cart {
-            position: absolute;
-            font-size: 14px;
-            text-align: center;
-            color: $white;
-            width: 100%;
-            top: 0;
-        }
+        .notification-badge {
+            position: relative;
+            background-color: $pinky; // Equivalent to bg-red-500 in Tailwind
+            border-radius: 100%; // Equivalent to rounded-full
+            width: 1.25rem; // Equivalent to w-5
+            height: 1.25rem; // Equivalent to h-5
+            top: -0.625rem; // Equivalent to -top-2.5
+            right: 0.625rem; // Equivalent to right-2.5
+            padding: 1px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          
+            .quantity-text {
+              position: absolute;
+              top: 0;
+              width: 100%;
+              text-align: center;
+              font-weight: 500;
+              color: red;
+              font-size: 0.875rem;
+            }
+          }
     }
 
     .username-container {
@@ -141,11 +140,17 @@ nav {
         line-height: 60px;
         text-align: center;
     }
+    .sub-title-banner {
+        font-size: 40px;
+        line-height: 60px;
+        font-weight: 400;
+        color: $font-primary;
+    }
 }
 
 .section-grid {
     margin: 5rem 0;
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
     gap: 24px;
@@ -173,29 +178,33 @@ nav {
 }
 
 .grid:nth-child(1) {
+    grid-column: 1;
     background: $pink;
-    background-image: url('/public/it-periperal.png');
+    background-image: url('/it-periperal.png');
     background-position: bottom;
     background-size: contain;
     background-repeat: no-repeat;
 }
 .grid:nth-child(2) {
+    grid-column: 2;
     background: $light-blue;
-    background-image: url('/public/printing.png');
+    background-image: url('/printing.png');
     background-position: bottom;
     background-size: contain;
     background-repeat: no-repeat;
 }
 .grid:nth-child(3) {
+    grid-column: 3;
     background: $light-orange;
-    background-image: url('/public/pantry.png');
+    background-image: url('/pantry.png');
     background-position: bottom;
     background-size: contain;
     background-repeat: no-repeat;
 }
 .grid:nth-child(4) {
+    grid-column: 4;
     background: $beam;
-    background-image: url('/public/merchandise.png');
+    background-image: url('/merchandise.png');
     background-position: bottom;
     background-size: contain;
     background-repeat: no-repeat;

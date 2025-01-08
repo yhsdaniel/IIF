@@ -1,52 +1,52 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { getAllCategory, getUser, getAllProduct, getPerCategory, getDetailProduct, getNameUser } from './api';
+import { getAllCategory, getAllProduct, getPerCategory, getDetailProduct } from './api';
 
-export const LoginUser = createSlice({
-    name: 'user',
-    initialState: {
-        loading: false,
-        error: null,
-        isSuccess: false,
-        token: "",
-    },
-    reducers: {
-        logout: (state) => {
-            state.token = localStorage.removeItem('userEmail', 'user')
-        },
-    },
-    extraReducers: {
-        [getUser.pending]: (state) => {
-            state.loading = true
-            state.error = null
-        },
-        [getUser.fulfilled]: (state, { payload: { token, error } }) => {
-            state.loading = false
-            state.isSuccess = true
-            if (error) {
-                state.error = error
-            } else {
-                state.token = token
-                localStorage.setItem('token', JSON.stringify(token))
-            }
-        },
-        [getUser.rejected]: (state, action) => {
-            state.loading = false
-            state.error = action.error
-        },
-    },
-})
+// export const LoginUser = createSlice({
+//     name: 'user',
+//     initialState: {
+//         loading: false,
+//         error: null,
+//         isSuccess: false,
+//         token: "",
+//     },
+//     reducers: {
+//         logout: (state) => {
+//             state.token = localStorage.removeItem('userEmail', 'user')
+//         },
+//     },
+//     extraReducers: {
+//         [getUser.pending]: (state) => {
+//             state.loading = true
+//             state.error = null
+//         },
+//         [getUser.fulfilled]: (state, { payload: { token, error } }) => {
+//             state.loading = false
+//             state.isSuccess = true
+//             if (error) {
+//                 state.error = error
+//             } else {
+//                 state.token = token
+//                 localStorage.setItem('token', JSON.stringify(token))
+//             }
+//         },
+//         [getUser.rejected]: (state, action) => {
+//             state.loading = false
+//             state.error = action.error
+//         },
+//     },
+// })
 
-export const NameUser = createSlice({
-    name: 'nameUser',
-    initialState: {
-        dataUser: []
-    },
-    extraReducers: {
-        [getNameUser.fulfilled]: (state, action) => {
-            state.dataUser = action.payload
-        }
-    },
-})
+// export const NameUser = createSlice({
+//     name: 'nameUser',
+//     initialState: {
+//         dataUser: []
+//     },
+//     extraReducers: {
+//         [getNameUser.fulfilled]: (state, action) => {
+//             state.dataUser = action.payload
+//         }
+//     },
+// })
 
 export const Category = createSlice({
     name: 'category',
@@ -139,4 +139,4 @@ export const cartSlice = createSlice({
 })
 
 export const { addToCart, incrementQuantity, decrementQuantity, removeItem } = cartSlice.actions
-export const { logout } = LoginUser.actions
+// export const { logout } = LoginUser.actions

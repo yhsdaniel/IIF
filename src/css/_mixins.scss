@@ -1,0 +1,9 @@
+@mixin radius($radius: 5px){
+	border-radius: $radius;
+}
+
+@mixin flex($position: center, $align: center) {
+	display: flex;
+	justify-content: $position;
+	align-items: $align;
+}

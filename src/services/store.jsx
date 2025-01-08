@@ -2,7 +2,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import thunk from 'redux-thunk'
 import storage from 'redux-persist/lib/storage'
 import { persistReducer, persistStore } from 'redux-persist'
-import { LoginUser, Category, AllProduct, perCategory, detailProduct, NameUser, cartSlice } from './redux'
+import { Category, AllProduct, perCategory, detailProduct, cartSlice } from './redux'
 
 const persistConfig = {
   key: 'root',
@@ -10,10 +10,10 @@ const persistConfig = {
 }
 
 const rootReducer = combineReducers({
-  user: persistReducer(persistConfig, LoginUser.reducer),
+  // user: persistReducer(persistConfig, LoginUser.reducer),
   detailProduct: persistReducer(persistConfig, detailProduct.reducer),
   cart: persistReducer(persistConfig, cartSlice.reducer),
-  nameUser: NameUser.reducer,
+  // nameUser: NameUser.reducer,
   category: Category.reducer,
   product: AllProduct.reducer,
   perCategory: perCategory.reducer,
