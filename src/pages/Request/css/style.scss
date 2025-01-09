@@ -1,0 +1,33 @@
+.my-request-page {
+    .status-filter {
+        min-width: 150px;
+    }
+
+    .search-box {
+        max-width: 250px;
+    }
+
+    .status-label {
+        font-weight: bold;
+        border-radius: 5px;
+        padding: 4px 8px;
+        display: inline-block;
+        &.in-review {
+            background-color: #fdf5d7;
+            color: #c47f17;
+        }
+        &.rejected {
+            background-color: #ffe4e4;
+            color: #d9534f;
+        }
+        &.approved {
+            background-color: #dff5e7;
+            color: #28a745;
+        }
+    }
+
+    .div-table {
+        width: 100%;
+        overflow-x: auto;
+    }
+}

@@ -6,7 +6,7 @@ export default function Navigation() {
         <section className='section-nav'>
             <Link to={'/'}>Home</Link>
             <Link to={'/request'}>My Request</Link>
-            <Link to={'/invoice'}>Invoice</Link>
+            <Link to={''}>Invoice</Link>
         </section>
     )
 }

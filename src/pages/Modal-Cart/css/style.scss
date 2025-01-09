@@ -1,42 +1,6 @@
 @import "../../../css/variable";
 @import "../../../css/mixins";
-
-.modal-dialog {
-    position: fixed;
-    background: #00000080;
-    width: 100%;
-    height: 100%;
-    right: 0;
-    z-index: 20;
-    bottom: 0;
-    overflow-y: auto;
-
-    .modal {
-        position: absolute;
-        width: 40%;
-        height: 100vh;
-        right: 0;
-        background: $white;
-        padding: 5px 20px;
-        overflow: hidden;
-        animation-name: slidemodal;
-        animation-duration: .5s;
-        animation-iteration-count: 1;
-        animation-timing-function: ease-in-out;
-        @include screen-below(md) {
-            width: 100%;
-        }
-
-        .modal-header {
-            @include flex(flex-start, center);
-
-            span {
-                margin: 0 2rem;
-                cursor: pointer;
-            }
-        }
-    }
-}
+@import "../../../css/modal";
 
 .modal-body {
     height: 2.5rem;
@@ -162,7 +126,7 @@
 }
 
 .cart-list {
-    height: 24rem;
+    height: 55vh;
     flex-direction: column;
     font-size: 0.75rem;
     background-color: $white;
@@ -204,6 +168,12 @@
                     width: 100%;
                     font-size: $font-size-primary;
                     font-weight: 500;
+                    @include screen-below(md) {
+                        width: 100px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
                 }
 
                 .vendor {
@@ -228,6 +198,9 @@
                 text-align: right;
                 font-size: $font-size-primary;
                 font-weight: 500;
+                @include screen-below(md){
+                    font-size: 14px;
+                }
             }
 
             .quantity-section {

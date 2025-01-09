@@ -3,11 +3,11 @@
 
 .financial-findims {
     width: 100%;
-    padding: 0 1rem;
     border-radius: 10px;
     background: $white;
 
     .financial-modal-header {
+        position: relative;
         @include flex(center);
 
         span {

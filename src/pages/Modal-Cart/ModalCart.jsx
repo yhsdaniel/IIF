@@ -22,10 +22,8 @@ export default function ModalCart({ title, onNext, onClose }) {
     const handleCheckbox = (id) => {
         setCheckedItems((prevChecked) => {
             if (prevChecked.includes(id)) {
-                // If already checked, uncheck it
                 return prevChecked.filter((item) => item !== id);
             } else {
-                // If unchecked, check it
                 return [...prevChecked, id];
             }
         });
@@ -106,9 +104,6 @@ export default function ModalCart({ title, onNext, onClose }) {
                                     <label>{item.quantity}</label>
                                     <button onClick={() => dispatch(incrementQuantity(item.product.id))}>+</button>
                                 </div>
-                                {/* <div className="remove-section">
-                                    <button onClick={() => dispatch(removeItem(item.product.id))}>Remove</button>
-                                    </div> */}
                                 <div className='hide'>{quantityPriceProduct.push((item.quantity * item.product.price).toFixed(2))}</div>
                             </div>
                         </div>

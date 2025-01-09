@@ -4,7 +4,9 @@ export default function Modal({ children }) {
     return (
         <div className='modal-dialog'>
             <div className='modal'>
-                {children}
+                <div className='modal-container'>
+                    {children}
+                </div>
             </div>
         </div>
     )

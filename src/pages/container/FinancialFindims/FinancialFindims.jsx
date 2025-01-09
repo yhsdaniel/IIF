@@ -3,14 +3,9 @@ import Modal from '../../../components/Modal'
 import '../../Modal-Cart/css/style.min.css'
 import './css/style.min.css'
 
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-
 export default function FinancialFindims({ title, onClose }) {
     const [formData, setFormData] = useState({
-        orderDate: "19 Jan 2024",
+        orderDate: "",
         accountType: "",
         budgetAccount: "",
         fixedAssetNumber: "",
