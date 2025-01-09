@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux'
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import logo from '/iif-logo.svg'
 import { useNavigate } from 'react-router-dom';
-import { getDetailProduct } from '../services/api';
 import ModalCart from '../pages/Modal-Cart/ModalCart';
 import FinancialFindims from '../pages/container/FinancialFindims/FinancialFindims';
 

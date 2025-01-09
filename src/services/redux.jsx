@@ -1,64 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { getAllCategory, getAllProduct, getPerCategory, getDetailProduct } from './api';
-
-// export const LoginUser = createSlice({
-//     name: 'user',
-//     initialState: {
-//         loading: false,
-//         error: null,
-//         isSuccess: false,
-//         token: "",
-//     },
-//     reducers: {
-//         logout: (state) => {
-//             state.token = localStorage.removeItem('userEmail', 'user')
-//         },
-//     },
-//     extraReducers: {
-//         [getUser.pending]: (state) => {
-//             state.loading = true
-//             state.error = null
-//         },
-//         [getUser.fulfilled]: (state, { payload: { token, error } }) => {
-//             state.loading = false
-//             state.isSuccess = true
-//             if (error) {
-//                 state.error = error
-//             } else {
-//                 state.token = token
-//                 localStorage.setItem('token', JSON.stringify(token))
-//             }
-//         },
-//         [getUser.rejected]: (state, action) => {
-//             state.loading = false
-//             state.error = action.error
-//         },
-//     },
-// })
-
-// export const NameUser = createSlice({
-//     name: 'nameUser',
-//     initialState: {
-//         dataUser: []
-//     },
-//     extraReducers: {
-//         [getNameUser.fulfilled]: (state, action) => {
-//             state.dataUser = action.payload
-//         }
-//     },
-// })
-
-export const Category = createSlice({
-    name: 'category',
-    initialState: {
-        data: []
-    },
-    extraReducers: {
-        [getAllCategory.fulfilled]: (state, action) => {
-            state.data = action.payload
-        }
-    },
-})
+import { getAllProduct } from './api';
 
 export const AllProduct = createSlice({
     name: 'product',
@@ -69,30 +10,6 @@ export const AllProduct = createSlice({
         builder.addCase(getAllProduct.fulfilled, (state, action) => {
             state.data = action.payload
         })
-    },
-})
-
-export const perCategory = createSlice({
-    name: 'perCategory',
-    initialState: {
-        dataCategory: []
-    },
-    extraReducers: {
-        [getPerCategory.fulfilled]: (state, action) => {
-            state.dataCategory = action.payload
-        }
-    },
-})
-
-export const detailProduct = createSlice({
-    name: 'detailProduct',
-    initialState: {
-        detailProduct: [],
-    },
-    extraReducers: {
-        [getDetailProduct.fulfilled]: (state, action) => {
-            state.detailProduct = action.payload
-        }
     },
 })
 
@@ -139,4 +56,3 @@ export const cartSlice = createSlice({
 })
 
 export const { addToCart, incrementQuantity, decrementQuantity, removeItem } = cartSlice.actions
-// export const { logout } = LoginUser.actions

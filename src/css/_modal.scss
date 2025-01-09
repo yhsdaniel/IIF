@@ -13,7 +13,7 @@
 
     .modal {
         position: absolute;
-        width: 40%;
+        width: 50%;
         height: 100vh;
         right: 0;
         background: $white;
@@ -22,7 +22,10 @@
         animation-duration: 0.5s;
         animation-iteration-count: 1;
         animation-timing-function: ease-in-out;
-        @include screen-below(md) {
+        @include screen-below(2xl){
+            width: 80%;
+        }
+        @include screen-below(xl){
             width: 100%;
         }
 
@@ -34,6 +37,7 @@
 
                 span {
                     margin: 0 1rem;
+                    font-weight: 700;
                     cursor: pointer;
                 }
                 h2 {

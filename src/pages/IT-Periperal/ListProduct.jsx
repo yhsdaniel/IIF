@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllProduct } from '../../services/api';
 import { addToCart } from '../../services/redux';
-import { useNavigate } from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import { Box } from '@mui/material';
 
