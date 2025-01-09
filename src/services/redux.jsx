@@ -1,17 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { getAllProduct } from './api';
-
-export const AllProduct = createSlice({
-    name: 'product',
-    initialState: {
-        data: []
-    },
-    extraReducers: (builder) => {
-        builder.addCase(getAllProduct.fulfilled, (state, action) => {
-            state.data = action.payload
-        })
-    },
-})
 
 export const cartSlice = createSlice({
     name: "cart",

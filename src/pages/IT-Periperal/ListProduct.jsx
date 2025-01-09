@@ -1,20 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllProduct } from '../../services/api';
 import { addToCart } from '../../services/redux';
 import Grid from '@mui/material/Grid';
 import { Box } from '@mui/material';
+import axios from 'axios';
 
 const imagePerRow = 10
 
 const ListProduct = () => {
-    const { data } = useSelector(state => state.product)
+    // const { data } = useSelector(state => state.product)
+    const [products, setProducts] = useState([]);
     const [next, setNext] = useState(imagePerRow)
 
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(getAllProduct())
+        const fetchAPIProduct = async () => {
+            try {
+                const response = await axios.get('https://fakestoreapi.com/products');
+                setProducts(response.data);
+            } catch (error) {
+                console.error(error.response?.data || error.message);
+            }
+        };
+
+        fetchAPIProduct();
     }, [])
 
     const handleMoreImage = () => {
@@ -31,7 +41,7 @@ const ListProduct = () => {
                 <div className='content-container'>
                     <Box sx={{ flexGrow: 1 }}>
                         <Grid container columns={{ xs: 2, sm: 16, md: 20 }} className='grid-container'>
-                            {data?.slice(0, next).map((val, index) => (
+                            {products?.slice(0, next).map((val, index) => (
                                 <Grid item key={index} size={{ xs: 2, sm: 4, md: 4 }} className="product-card">
                                     <div className="product-container">
                                         <div className="details">
