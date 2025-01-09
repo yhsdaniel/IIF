@@ -3,16 +3,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getAllProduct } from '../../services/api';
 import { addToCart } from '../../services/redux';
 import { useNavigate } from 'react-router-dom';
+import Grid from '@mui/material/Grid';
+import { Box } from '@mui/material';
 
-const imagePerRow = 4
+const imagePerRow = 10
 
 const ListProduct = () => {
     const { data } = useSelector(state => state.product)
-    const { dataCategory } = useSelector(state => state.perCategory)
-    const { detailProduct } = useSelector(state => state.detailProduct)
     const [next, setNext] = useState(imagePerRow)
 
-    const navigate = useNavigate()
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -30,33 +29,11 @@ const ListProduct = () => {
                 <span className='sub-title-banner'>IT - PERIPERAL</span>
             </section>
             <section className='section-list-product'>
-                {/* <Category /> */}
                 <div className='content-container'>
-                    <div className='grid-container'>
-                        {/*---------------------- List Category -------------------*/}
-                        {/* {dataCategory.length > 0 ?
-                            dataCategory?.slice(0, next).map((val) => (
-                                <Grid item xs={2} sm={3} md={3} key={val.id}>
-                                    <div className='flex justify-center items-center flex-col h-72 my-2 cursor-pointer list' onClick={() => handleGoToDetailProduct(val.id)}>
-                                        <div className='flex justify-center items-center w-full h-full bg-white'>
-                                            <img src={val.image} alt="Sample Image" className='w-6/12 h-auto' />
-                                        </div>
-                                        <div className='w-full py-2 px-2 flex justify-center items-center flex-col'>
-                                            <div className='content pt-2 w-full flex justify-center items-center '>
-                                                <span className='text-sm font-bold text-center ellipsis'>{val.title}</span>
-                                            </div>
-                                            <div className='w-full mt-2'>
-                                                <div className='w-full h-full flex justify-start items-center'>
-                                                    <span className='text-xs text-black text-left font-bold'>$ {val.price} USD</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </Grid>
-                            )) : */}
-
-                            {data?.slice(0, next).map((val) => (
-                                <div className="product-card" key={val.id}>
+                    <Box sx={{ flexGrow: 1 }}>
+                        <Grid container columns={{ xs: 2, sm: 16, md: 20 }} className='grid-container'>
+                            {data?.slice(0, next).map((val, index) => (
+                                <Grid item key={index} size={{ xs: 2, sm: 4, md: 4 }} className="product-card">
                                     <div className="product-container">
                                         <div className="details">
                                             <div className="title-container">
@@ -83,13 +60,14 @@ const ListProduct = () => {
                                             <p className="company">PT. Intikom</p>
                                         </div>
                                     </div>
-                                </div>
+                                </Grid>
                             ))}
-                    </div>
-                    <button className='text-sm mt-4 border border-gray-400 rounded-lg py-2 px-3 hover:border-gray-700 duration-200 ease-in-out' onClick={handleMoreImage}>
-                        Load More. . .
-                    </button>
+                        </Grid>
+                    </Box>
                 </div>
+                <button className='btn-loadmore' onClick={handleMoreImage}>
+                    Load More. . .
+                </button>
             </section>
         </>
     )

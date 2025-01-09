@@ -65,10 +65,10 @@ export const AllProduct = createSlice({
     initialState: {
         data: []
     },
-    extraReducers: {
-        [getAllProduct.fulfilled]: (state, action) => {
+    extraReducers: (builder) => {
+        builder.addCase(getAllProduct.fulfilled, (state, action) => {
             state.data = action.payload
-        }
+        })
     },
 })
 

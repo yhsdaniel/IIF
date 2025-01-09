@@ -1,4 +1,5 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
+import { applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import storage from 'redux-persist/lib/storage'
 import { persistReducer, persistStore } from 'redux-persist'
@@ -24,7 +25,8 @@ const rootReducer = combineReducers({
 export const store = configureStore({
   reducer: rootReducer,
   devTools: process.env.NODE_ENV !== 'production',
-  middleware: [thunk]
+  // middleware: [thunk]
+  applyMiddleware
 })
 
 export const persistor = persistStore(store)

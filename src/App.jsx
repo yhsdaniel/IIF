@@ -1,8 +1,10 @@
 import './css/style.min.css';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import ListCart from './pages/container/ListCart';
-import DetailProduct from './pages/DetailProduct';
 import Periperal from './pages/IT-Periperal/Periperal';
 
 function App() {
@@ -11,8 +13,6 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path={`detail-product`} element={<DetailProduct />} />
-          {/* <Route path='Cart' element={<ListCart />} /> */}
           <Route path='it-periperal' element={<Periperal />} />
         </Routes>
       </Router>

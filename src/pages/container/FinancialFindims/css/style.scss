@@ -1,0 +1,94 @@
+@import '../../../../css/mixins';
+@import '../../../../css/variable';
+
+.financial-findims {
+    width: 100%;
+    padding: 0 1rem;
+    border-radius: 10px;
+    background: $white;
+
+    .financial-modal-header {
+        @include flex(center);
+
+        span {
+            position: absolute;
+            right: 0;
+        }
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            margin-bottom: 15px;
+
+            span {
+                color: $orange;
+                font-size: 0.9rem;
+            }
+
+            input,
+            select {
+                width: 100%;
+                padding: 10px;
+                margin-top: 5px;
+                border: 1px solid $light-gray;
+                border-radius: 5px;
+                font-size: 1rem;
+
+                option{
+                    appearance: none;
+                    
+                    &:hover {
+                        background-color: $orange;
+                    }
+                }
+            }
+        }
+
+        .total-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            flex-direction: column;
+            @include flex(center, flex-start);
+
+            p {
+                font-size: 1rem;
+                font-weight: 500;
+                margin: 0;
+            }
+
+            input {
+                width: 100%;
+                padding: 10px;
+                margin-top: 5px;
+                border: 1px solid $light-gray;
+                border-radius: 5px;
+                font-size: 1rem;
+            }
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 2rem 0;
+            background: $orange;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            @include radius(8px);
+
+            &:hover {
+                background: darken($color: $orange, $amount: 10);
+            }
+        }
+    }
+}

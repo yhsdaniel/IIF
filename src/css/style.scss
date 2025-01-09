@@ -1,4 +1,5 @@
 @import './variable';
+@import './mixins';
 
 
 #root {
@@ -33,18 +34,21 @@ nav {
         }
     }
     .back-to-homepage{
-        width: 183px;
-        height: 48px;
         border-radius: 8px;
         border: 1.2px solid $orange;
         text-align: center;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 4px 16px;
-        gap: 8px;
-        font-size: 14px;
+        padding: .8rem 1rem;
+        font-size: 12px;
         cursor: pointer;
+
+        .home-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
     }
 
     .flex-1 {
@@ -53,13 +57,12 @@ nav {
 
     .cart-container {
         width: 5%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex(center);
 
         .cart-icon {
             width: 2rem;
             height: 1.2rem;
+            cursor: pointer;
         }
 
         .notification-badge {
