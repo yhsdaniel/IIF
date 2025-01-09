@@ -21,23 +21,21 @@ export default function ModalCart({ title, onNext, onClose }) {
 
     const handleCheckbox = (id) => {
         setCheckedItems((prevChecked) => {
-            if (prevChecked.product.includes(id)) {
+            if (prevChecked.includes(id)) {
                 // If already checked, uncheck it
-                return prevChecked.product.filter((item) => item !== id);
+                return prevChecked.filter((item) => item !== id);
             } else {
                 // If unchecked, check it
-                return [...prevChecked.product, id];
+                return [...prevChecked, id];
             }
         });
     };
     checkedItems.forEach((id) => {
-        const item = cart.find((d) => d.id === id);
+        const item = cart.find((d) => d.product.id === id);
         if (item) {
             productToRemove.push(item);
         }
     });
-
-    console.log(productToRemove)
 
     const handleRemoveItem = () => {
         dispatch(removeItem(quantityPriceProduct))
