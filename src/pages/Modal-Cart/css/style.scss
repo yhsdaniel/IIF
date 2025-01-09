@@ -23,6 +23,9 @@
         animation-duration: .5s;
         animation-iteration-count: 1;
         animation-timing-function: ease-in-out;
+        @include screen-below(md) {
+            width: 100%;
+        }
 
         .modal-header {
             @include flex(flex-start, center);

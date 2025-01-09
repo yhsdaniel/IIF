@@ -1,3 +1,5 @@
+@import './variable';
+
 @mixin radius($radius: 5px){
 	border-radius: $radius;
 }
@@ -6,4 +8,16 @@
 	display: flex;
 	justify-content: $position;
 	align-items: $align;
+}
+
+@mixin screen-below($breakpoint){
+	@if map-has-key($breakpoints, $breakpoint) {
+		$breakpoint-value: map-get($breakpoints, $breakpoint);
+		@media only screen and (max-width: $breakpoint-value) and (max-aspect-ratio: 13/9) {
+			@content;
+		}
+	}
+	@else {
+		@warn 'Invalid breakpoint: #{$breakpoint}.';
+	}
 }
